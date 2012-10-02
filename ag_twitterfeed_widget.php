@@ -3,7 +3,7 @@
  * Plugin name: Twitter Feed Ticker 
  * Plugin URI: http://bythegram.ca
  * Description: A scrolling twitter feed (work in progress)
- * Version: 1.0
+ * Version: 1.1
  * Author: Adam Graham
  * 
  */
@@ -11,11 +11,12 @@
 if (!class_exists("ag_twitfeed_widget")) {
 	
 	function agTfeedstyle() {
-			
+		if (!wp_script_is( 'jquery', 'queue' ) ) {
+		wp_enqueue_script('jquery');	
+		};
     		wp_enqueue_script('gitfi', plugin_dir_url( __FILE__ ) . '/js/gistfile1.js');
-			wp_enqueue_style( 'AG Twitter Feed Style', plugin_dir_url( __FILE__ ) . '/css/tfeedstyle.css', array(), '0.1', 'screen' );
-			wp_enqueue_script('bytwit',  plugin_dir_url( __FILE__ ) . '/js/feed.js', array(), false, true);
-			
+		wp_enqueue_style( 'AG Twitter Feed Style', plugin_dir_url( __FILE__ ) . '/css/tfeedstyle.css', array(), '0.1', 'screen' );
+		wp_enqueue_script('bytwit',  plugin_dir_url( __FILE__ ) . '/js/feed.js', array(), false, true);
 		}
 		
 		add_action( 'wp_enqueue_scripts', 'agTfeedstyle' );
