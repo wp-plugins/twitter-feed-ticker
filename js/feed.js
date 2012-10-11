@@ -12,7 +12,7 @@ var Twitter = {
     insertLatestTweets: function (username) {
 		
         var limit    = 100;    // How many feeds do you want?
-        var url        = 'http://twitter.com/statuses/user_timeline.json?screen_name=' + username + '&count=' + limit + '&callback=?';
+        var url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' + username + '&count=' + limit + '&callback=?';
 
         // Now ajax in the feeds from twitter.com
         $j.getJSON(url, function (data) {
