@@ -18,6 +18,8 @@ Note:
 
 As of right now the css is pretty basic and only tested on my site. It may need to be adapted to fix your sites needs.
 
+Fixed: Twitter changed their API recently as a result the feed was not showing, 
+this should now be fixed
 
 == Installation ==
 
