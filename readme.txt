@@ -4,7 +4,7 @@ Donate link: http://bythegram.ca
 Tags: twitter, widget, 
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,8 @@ Yes and no. Unfortunately the javascript is not set up to handle multiple user n
 
 
 == Changelog ==
+= 1.2 =
+Updated the twitter call to match with the new API
 = 1.1 =
 Added jquery enqueue to ensure proper functionality
 = 1.0 =
