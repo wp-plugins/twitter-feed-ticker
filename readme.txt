@@ -27,7 +27,7 @@ As of right now the css is pretty basic and only tested on my site. It may need 
 
 == Frequently Asked Questions ==
 
-= Can I use the widget in multipe places? =
+= Can I use the widget in multiple places? =
 
 Yes and no. Unfortunately the javascript is not set up to handle multiple user names so though you could have multiple scroller feeds they all will show the same twitter posts
 
