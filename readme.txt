@@ -4,7 +4,7 @@ Donate link: http://bythegram.ca
 Tags: twitter, widget, 
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ As of right now the css is pretty basic and only tested on my site. It may need 
 
 == Frequently Asked Questions ==
 
-= Can I use the widget in multipe places? =
+= Can I use the widget in multiple places? =
 
 Yes and no. Unfortunately the javascript is not set up to handle multiple user names so though you could have multiple scroller feeds they all will show the same twitter posts
 
@@ -35,6 +35,8 @@ Yes and no. Unfortunately the javascript is not set up to handle multiple user n
 
 
 == Changelog ==
+= 1.2 =
+Updated to match Twitter's new API
 = 1.1 =
 Added jquery enqueue to ensure proper functionality
 = 1.0 =
