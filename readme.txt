@@ -1,7 +1,7 @@
 === Adam's Twitter Ticker Feed ===
 Contributors: bythegram
 Donate link: http://bythegram.ca
-Tags: twitter, widget, 
+Tags: twitter, widget, feed
 Requires at least: 3.0.1
 Tested up to: 3.4
 Stable tag: 1.2
