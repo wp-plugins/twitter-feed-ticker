@@ -3,7 +3,7 @@
  * Plugin name: Twitter Feed Ticker 
  * Plugin URI: http://bythegram.ca
  * Description: A scrolling twitter feed (work in progress)
- * Version: 1.2
+ * Version: 1.3
  * Author: Adam Graham
  * 
  */
@@ -35,7 +35,8 @@ if (!class_exists("ag_twitfeed_widget")) {
 			
 		$twittername = $instance['twittername'];
 		echo '<div id="twitter">';
-    	echo '<a href="http://www.twitter.com/'.$twittername.'" target="blank" ><h2 id="twitname">'.$twittername.'</h2></a>';
+    	echo '<a href="http://www.twitter.com/'.$twittername.'" target="_blank" ><h2>Follow @<span id="twitname">'.$twittername.' on 
+Twitter</span></h2></a>';
     	echo '<p>Loading...</p>';
     	echo '<noscript>This feature requires JavaScript</noscript>';
 		echo '</div>';

@@ -21,7 +21,9 @@ var Twitter = {
 
             // Loop through all the tweets and create a link for each
             for (var i in data) {
-                html += '<a href="http://twitter.com/' + username + '#status_' + data[i].id_str + '">' + data[i].text + ' <i>' + Twitter.daysAgo(data[i].created_at) + '</i></a>';
+                html += '<a href="http://twitter.com/' + username + '#stream-item-tweet-' + data[i].id_str + '" target="_blank">' + data[i].text + ' 
+<i>' + 
+Twitter.daysAgo(data[i].created_at) + '</i></a>';
             }
 
             html += '</marquee>';
