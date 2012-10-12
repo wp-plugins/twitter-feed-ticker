@@ -4,7 +4,7 @@ Donate link: http://bythegram.ca
 Tags: twitter, widget, feed
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,8 @@ Yes and no. Unfortunately the javascript is not set up to handle multiple user n
 
 
 == Changelog ==
+= 1.3.1 =
+Sorry in my rush to release the last fix I made some mistakes this should take care of it
 = 1.3 =
 Small fixes to the links (added target="_blank" and made the tweet link to the actual tweet) and changed the title from "username" to "Follow 
 username on Twitter". Thanks to toes21 for the suggestions!
