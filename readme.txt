@@ -18,8 +18,15 @@ Note:
 
 As of right now the css is pretty basic and only tested on my site. It may need to be adapted to fix your sites needs.
 
-Fixed: Twitter changed their API recently as a result the feed was not showing, 
-this should now be fixed
+Warning!!
+I have changed this to use Twitter's Search API and as a result there may be
+some undesirable changes. 
+
+1. Twitter's Search API only fetches recent tweets (6days or newer)
+2. It will only fetch 15 tweets
+
+My apologizes if these changes do not meet your needs but I had to find a
+quick and simple solution to avoid oAuth due to Twitter's new API.
 
 == Installation ==
 
@@ -37,6 +44,8 @@ Yes and no. Unfortunately the javascript is not set up to handle multiple user n
 
 
 == Changelog ==
+= 1.3.2 =
+Changed to use Twitter's Search API in light of v1 being retired
 = 1.3.1 =
 Sorry in my rush to release the last fix I made some mistakes this should take care of it
 = 1.3 =
