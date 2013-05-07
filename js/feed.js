@@ -12,17 +12,18 @@ var Twitter = {
     insertLatestTweets: function (username) {
 		
         var limit    = 100;    // How many feeds do you want?
-        var url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' + username + '&count=' + limit + '&callback=?';
 
-        // Now ajax in the feeds from twitter.com
-        $j.getJSON(url, function (data) {
-            // We'll start by creating a normal marquee-element for the tweets
-            var html = '<marquee behavior="scroll" scrollamount="1" direction="left">';
-
-            // Loop through all the tweets and create a link for each
-            for (var i in data) {
-                html += '<a href="http://twitter.com/' + username + '#stream-item-tweet-' + data[i].id_str + '" target="_blank">' + data[i].text + '<i>' + Twitter.daysAgo(data[i].created_at) + '</i></a>';
-            }
+	//var url = '///api.twitter.com/1/statuses/user_timeline.json?screen_name=' + username + '&count=' + limit + '&callback=?';
+	var url = '///search.twitter.com/search.json?q=from:' + username + '&callback=?';
+	 
+	// Now ajax in the feeds from twitter.com
+	 $j.getJSON(url, function (data) {
+	// We'll start by creating a normal marquee-element for the tweets
+	 var html = '<marquee behavior="scroll" scrollamount="1" direction="left">';
+	 // Loop through all the tweets and create a link for each
+	 $j.each( data.results, function( index, item ) {
+		html += '<a href="http://twitter.com/' + username + '#stream-item-tweet-' + item.id_str + '" target="_blank">' + item.text + '<i>' + Twitter.daysAgo(item.created_at) + '</i></a>';
+	 });
 
             html += '</marquee>';
 
