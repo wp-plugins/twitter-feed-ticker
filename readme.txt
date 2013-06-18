@@ -19,14 +19,11 @@ Note:
 As of right now the css is pretty basic and only tested on my site. It may need to be adapted to fix your sites needs.
 
 Warning!!
-I have changed this to use Twitter's Search API and as a result there may be
-some undesirable changes. 
+Twitter has cancelled their Search API as of June 13th. I am going to work on
+a new release that uses the 1.1 API but the downside is that it will require
+oAuth (meaning in order to use this you will have to register your site as an
+"App" on twitter. Look for an update in a few weeks. Sorry for the wait.
 
-1. Twitter's Search API only fetches recent tweets (6days or newer)
-2. It will only fetch 15 tweets
-
-My apologizes if these changes do not meet your needs but I had to find a
-quick and simple solution to avoid oAuth due to Twitter's new API.
 
 == Installation ==
 
