@@ -3,8 +3,8 @@ Contributors: bythegram
 Donate link: http://bythegram.ca
 Tags: twitter, widget, feed
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 1.3.2
+Tested up to: 3.6
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,22 +14,24 @@ Twitter Widget that scrolls through your tweets like a stock ticker
 
 This is just the prototype release of the Twitter ticker feed widget. As of now it does not support multiple widgets and will only fetch user feeds. I plan on focusing on enabling multiple widgets next and then I will worry about fetching trends.
 
+Update:
+I have updated the plugin to now use Twitter API v1.1 which means it requires
+OAuth. You must register a new app at https://dev.twitter.com/apps/new in
+order to use this widget. 
+
 Note:
 
 As of right now the css is pretty basic and only tested on my site. It may need to be adapted to fix your sites needs.
-
-Warning!!
-Twitter has cancelled their Search API as of June 13th. I am going to work on
-a new release that uses the 1.1 API but the downside is that it will require
-oAuth (meaning in order to use this you will have to register your site as an
-"App" on twitter. Look for an update in a few weeks. Sorry for the wait.
 
 
 == Installation ==
 
 1. Upload `ag_twitter_feed` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Use the AG Twitter Feed Widget in one of your widget areas with the user name desired.
+3. Go to https://dev.twitter.com/apps/new to create a new Twitter app in order
+to get a Consumer Key and Consumer Secret
+4. Add you Consumer Key and Consumer Secret to the Twitter Options page
+4. Use the AG Twitter Feed Widget in one of your widget areas with the user name desired.
 
 == Frequently Asked Questions ==
 
@@ -41,6 +43,8 @@ Yes and no. Unfortunately the javascript is not set up to handle multiple user n
 
 
 == Changelog ==
+= 1.3.3 =
+Changed to Twitter v1.1 and oAuth
 = 1.3.2 =
 Changed to use Twitter's Search API in light of v1 being retired
 = 1.3.1 =

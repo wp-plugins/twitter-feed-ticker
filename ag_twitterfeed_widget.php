@@ -3,11 +3,13 @@
  * Plugin name: Twitter Feed Ticker 
  * Plugin URI: http://bythegram.ca
  * Description: A scrolling twitter feed (work in progress)
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: Adam Graham
  * 
  */
 
+require (plugin_dir_path( __FILE__ ).'/ag-twitter-options.php');
+require (plugin_dir_path( __FILE__ ).'/oauth.php');
 
 if (!class_exists("ag_twitfeed_widget")) {
 	
@@ -34,9 +36,25 @@ if (!class_exists("ag_twitfeed_widget")) {
 		function widget($args, $instance) {
 			
 		$twittername = $instance['twittername'];
+		
+		$query = 'from:'.$twittername;
+		
+		$bearer_token = ag_get_bearer_token();
+		$tweets = ag_search_for_a_term($bearer_token, $query, '', 'mixed', $number);
+		
+		$tweets = json_decode($tweets);
+		
 		echo '<div id="twitter">';
     	echo '<a href="http://www.twitter.com/'.$twittername.'" target="_blank" ><h2>Follow @<span id="twitname">'.$twittername.'</span> on Twitter</h2></a>';
-    	echo '<p>Loading...</p>';
+		echo '<marquee behavior="scroll" scrollamount="1" direction="left">';
+		
+		foreach ( $tweets->statuses as $entry ) {
+		echo '<a href="http://twitter.com/'. $twittername .'#stream-item-tweet-' . $entry->id_str . '" target="_blank">' . $entry->text . '<i>' . date('F d Y', strtotime($entry->created_at)) . '</i></a>';
+		}
+		
+		echo '</marquee>';
+		
+		
     	echo '<noscript>This feature requires JavaScript</noscript>';
 		echo '</div>';
 		
