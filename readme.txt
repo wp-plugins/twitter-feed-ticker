@@ -19,9 +19,19 @@ I have updated the plugin to now use Twitter API v1.1 which means it requires
 OAuth. You must register a new app at https://dev.twitter.com/apps/new in
 order to use this widget. 
 
+Warning:
+
+FYI I just realized that this plugin is breaking the new display policy
+Twitter has for how tweets are supposed to be displayed. I'll be updated the
+stock css in the next couple of days. Until then be warned that using this
+plugin as is will be against Twitter's policies
+https://dev.twitter.com/terms/display-requirements
+
 Note:
 
 As of right now the css is pretty basic and only tested on my site. It may need to be adapted to fix your sites needs.
+
+
 
 
 == Installation ==
