@@ -37,21 +37,39 @@ if (!class_exists("ag_twitfeed_widget")) {
 			
 		$twittername = $instance['twittername'];
 		
-		$query = 'from:'.$twittername;
+		$options = get_option( 'ag_twitter_options' );	
+		$app_id = $options['ag_appid'];
+		$app_secret = $options['ag_appsecret'];	
+		$key = $options['ag_key'];
+		$secret = $options['ag_secret'];
 		
-		$bearer_token = ag_get_bearer_token();
-		$tweets = ag_search_for_a_term($bearer_token, $query, '', 'mixed', $number);
-		
+		$settings = array(
+    		'oauth_access_token' => "$app_id",
+    		'oauth_access_token_secret' => "$app_secret",
+    		'consumer_key' => "$key",
+		'consumer_secret' => "$secret"
+		);				
+				
+		$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+		$getfield = '?screen_name='.$twittername.'&count=10';
+		$requestMethod = 'GET';
+		$twitter = new TwitterAPIExchange($settings);
+		$tweets = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
+
 		$tweets = json_decode($tweets);
 		
 		echo '<div id="twitter">';
     	echo '<a href="http://www.twitter.com/'.$twittername.'" target="_blank" ><h2>Follow @<span id="twitname">'.$twittername.'</span> on Twitter</h2></a>';
 		echo '<marquee behavior="scroll" scrollamount="1" direction="left">';
 		
-		foreach ( $tweets->statuses as $entry ) {
+		if ( !empty($tweets) ) {
+		
+		foreach ( $tweets as $entry ) {
 		echo '<a href="http://twitter.com/'. $twittername .'#stream-item-tweet-' . $entry->id_str . '" target="_blank">' . $entry->text . '<i>' . date('F d Y', strtotime($entry->created_at)) . '</i></a>';
 		}
 		
+		}
+
 		echo '</marquee>';
 		
 		
