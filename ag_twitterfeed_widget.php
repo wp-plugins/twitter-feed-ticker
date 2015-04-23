@@ -3,7 +3,7 @@
  * Plugin name: Twitter Feed Ticker 
  * Plugin URI: http://bythegram.ca
  * Description: A scrolling twitter feed (work in progress)
- * Version: 1.3.3
+ * Version: 1.3.4
  * Author: Adam Graham
  * 
  */
